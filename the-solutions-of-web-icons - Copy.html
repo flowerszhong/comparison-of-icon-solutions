@@ -1,0 +1,266 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>the solutions of web icons</title>
+    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
+    <!--<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">-->
+</head>
+    <style type="text/css">
+    textarea{
+        border: 0 none;
+        width:270px;
+        height: 100px;
+    }
+
+    .ok{
+        color: green;
+    }
+
+    .wrong{
+        color: red;
+    }
+
+
+    </style>
+<body>
+
+    <table class="table table-bordered" style="table-layout:fixed;width:100%">
+        <caption>the solutions of web icons</caption>
+        <thead>
+            <tr>
+                <th style="width:10%;">#</th>
+                <th style="width:30%">SVG</th>
+                <th style="width:25%">
+                    Css Sprite(
+                    <a href="http://twitter.github.io/bootstrap/base-css.html#icons" target="_blank">Bootstrap :</a>
+                    Icons
+                    <small>
+                        by
+                        <a href="http://glyphicons.com" target="_blank">Glyphicons</a>
+                    </small>
+                    )
+                </th>
+                <th style="width:25%;">
+                    Font(
+                    <a href="http://fortawesome.github.io/Font-Awesome/icons/">Font Awesome</a>
+                    )
+                </th>
+                <th style="width:10%;">comments</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Icon Simple</td>
+                <td>
+                    <a class="nudge-right" href="javascript:;">
+                        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="14px" height="17px" viewBox="-0.5 -2.5 17 20" enable-background="new -0.5 -2.5 17 20" xml:space="preserve">
+                            <polygon points="5.5,-1.495 5.5,-0.489 15.051,7.088 5.5,14.5 5.5,15.5 16.5,7.088 "></polygon>
+                            <rect x="-0.5" y="-1.5" width="1" height="17"></rect>
+                        </svg>
+                    </a>
+                </td>
+                <td> <i class="icon-chevron-right"></i>
+                </td>
+                <td> <i class="icon-angle-right"></i>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td rowspan="2">DOM Structure</td>
+                <td>
+                    <textarea><a class="nudge-right" href="javascript:;"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="14px" height="17px" viewBox="-0.5 -2.5 17 20" enable-background="new -0.5 -2.5 17 20" xml:space="preserve">
+                                <polygon points="5.5,-1.495 5.5,-0.489 15.051,7.088 5.5,14.5 5.5,15.5 16.5,7.088 "></polygon>
+                                <rect x="-0.5" y="-1.5" width="1" height="17"></rect>
+                            </svg>
+                        </a>
+                    </textarea>
+                </td>
+                <td>
+                    <textarea><i class="icon-chevron-right"></i>
+                    </textarea>
+                </td>
+                <td>
+                    <textarea><i class="icon-angle-right"></i> </textarea>
+                </td>
+                <td rowspan="2"></td>
+            </tr>
+            <tr>
+                <td>
+                    <b class="wrong">Heavy</b>
+                    </td>
+                <td><b class="ok">Light</b></td>
+                <td><b class="ok">Light</b></td>
+            </tr>
+            <tr>
+                <td>Semantics</td>
+                <td>
+                    <i class="icon-remove wrong"></i>
+                </td>
+                <td>
+                    <i class="icon-ok ok"></i>
+                </td>
+                <td>
+                    <i class="icon-ok ok"></i>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td rowspan="2">Complexity</td>
+                <td>
+                    <ol>
+                        <li>design image</li>
+                        <li>transfer to svg</li>
+                        <li>build svg path</li>
+                        <li>registered to svgIconsFactory</li>
+                    </ol>
+                </td>
+                <td>
+                    <ol>
+                        <li>design image</li>
+                        <li>registered to css-sprite-bg-images</li>
+                        <li>add bg-position-style</li>
+                    </ol>
+                </td>
+                <td>
+                    <ol>
+                        <li>add font</li>
+                    </ol>
+                </td>
+                <td rowspan="2"></td>
+            </tr>
+            <tr>
+                <td>
+                    <b class="wrong">High</b>
+                    </td>
+                <td><b class="ok">Lower</b></td>
+                <td><b class="ok">Lowest</b></td>
+            </tr>
+
+            <tr>
+                <td rowspan="2">Usability</td>
+                <td>
+                    <ol>
+                        <li>Import svgIconsFactory.js and icons.css</li>
+                        <li>
+                            create a instance of svgIconsFactory
+                            <code>var Icons = new svgIconsFactory();</code>
+                        </li>
+                        <li>
+                            create a instance of each icon <br>
+                            <code>Icons.render({</code><br>
+                            <code>"type" : "xxx",</code><br>
+                            <code>"containerEl" : "dom.."</code><br>
+                            <code>"fill" : "default...",</code><br>
+                            <code>"stroke" : "default..."</code><br>
+                            <code>})</code>
+                        </li>
+                    </ol>
+                </td>
+                <td>
+                    <ol>
+                        <li>Import css-sprite-image & style files</li>
+                        <li>
+                            tags
+                            <br>
+                            <code>&lt;i class="icon-xxx"&gt;&lt;i&gt;</code>
+                            <br>
+                            or
+                            <br>
+                            <code>$dom.append("&lt;i class='icon-xxx'&lt;/i&gt;")</code>
+                        </li>
+                    </ol>
+
+                </td>
+                <td>
+                    <ol>
+                        <li>Import font.ttf & style files</li>
+                        <li>
+                            tags
+                            <br>
+                            <code>&lt;i class="icon-xxx"&gt;&lt;i&gt;</code>
+                            <br>
+                            or
+                            <br>
+                            <code>$dom.append("&lt;i class='icon-xxx'&lt;/i&gt;")</code>
+                        </li>
+                    </ol>
+                </td>
+                <td rowspan="2"></td>
+            </tr>
+
+            <tr>
+                <td><b class="wrong">Hard</b></td>
+                <td><b class="ok">easy</b></td>
+                <td><b class="ok">easy</b></td>
+            </tr>
+            <tr>
+                <td rowspan="2">Feasibility <br>(eg:change color)</td>
+                <td>
+                    <ol>
+                        <li>destory old dom</li>
+                        <li>new configs<code>icon.setSkin({"fill": "red"})</code></li>
+                        <li>append new dom</li>
+                    </ol>
+                </td>
+                <td>
+                    <ol>
+                        <li>add skin style class<code>addClass("red")</code></li>
+                    </ol>
+                </td>
+                <td>
+                    <ol>
+                        <li>add style,eg:<code>{color:red;}</code></li>
+                    </ol>
+                </td>
+                <td rowspan="2"></td>
+            </tr>
+            <tr>
+                <td><b class="wrong">Hard</b></td>
+                <td><b class="ok">easy</b></td>
+                <td><b class="ok">easy</b></td>
+            </tr>
+
+            <tr>
+                <td>Scale</td>
+                <td><code>icon.setScale(nx)</code></td>
+                <td><code>.icon-nx</code></td>
+                <td><code>.icon-nx</code></td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>Scale-x for Pad/Mobile</td>
+                <td>
+                    <ol>
+                        <li>5x  : <b class="ok">good</b></li>
+                        <li>10x : <b class="ok">good</b></li>
+                        <li>20x : <b class="ok">good</b></li>
+                    </ol>
+
+                </td>
+
+                <td>
+                    <ol>
+                        <li>5x  : <b class="ok">good</b></li>
+                        <li>10x : <b class="wrong">bad</b></li>
+                        <li>20x : <b class="wrong">bad</b></li>
+                    </ol>
+
+                </td>
+
+                <td>
+                    <ol>
+                        <li>5x  : <b class="ok">good</b></li>
+                        <li>10x : <b class="ok">good</b></li>
+                        <li>20x : <b class="wrong">bad</b></li>
+                    </ol>
+
+                </td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
